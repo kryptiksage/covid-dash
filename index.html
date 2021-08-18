@@ -22,11 +22,11 @@
 					<div class="container-item">
 						<div class="containter-vertical">
 							<div class="container-vertical-item">
-								<input type="date" />
+								<input type="date" id="date" />
 							</div>
 
 							<div class="container-vertical-item">
-								<select name="States" id="states">
+								<select name="States" id="state">
 									<option value="States">States</option>
 									<option value="Andhra Pradesh">
 										Andhra Pradesh
@@ -102,13 +102,13 @@
 							</div>
 
 							<div class="container-vertical-item">
-								<button id="find">find</button>
+								<button id="filter">filter</button>
 							</div>
 						</div>
 					</div>
 
 					<div class="container-item">
-						<canvas id="canvas"> </canvas>
+						<canvas id="spreadChart"> </canvas>
 					</div>
 
 					<div class="container-item">
@@ -122,7 +122,7 @@
 								<th>Recovered</th>
 								<th>Tested</th>
 							</thead>
-							<tb id="tableData"></tr>
+							<tbody id="tableData"></tbody>
 						</table>
 					</div>
 				</div>

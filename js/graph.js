@@ -1,4 +1,4 @@
-function selected(select, state, dated, confirmed, recovered, deceased) {
+function selected(dated, confirmed, recovered, deceased) {
   var spreadCanvas = document.getElementById("spreadChart");
   var lineChart = new Chart(spreadCanvas, {
     type: 'line',
@@ -36,4 +36,3 @@ function selected(select, state, dated, confirmed, recovered, deceased) {
 
   });
 }
-

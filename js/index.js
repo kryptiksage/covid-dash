@@ -32,19 +32,20 @@ window.onload = () => {
 
 
         //Graph
+        let dateList = Object.keys(data);
+        let requiredDateList = dateList.slice((dateList.indexOf(date) - 6), (dateList.indexOf(date) + 1));
+
         let graphDated = []
         let graphConfirmed = [];
         let graphRecovered = [];
         let graphDeceased = [];
-        for (var item in data) {
-            if (data[item] && data[item]["delta"]) {
-                graphDated.push(item)
-                graphConfirmed.push(data[item]["delta"].confirmed)
-                graphRecovered.push(data[item]["delta"].recovered)
-                graphDeceased.push(data[item]["delta"].deceased)
-            }
-            if (new Date(item).getTime() > new Date(date).getTime()) {
-                break;
+
+        for (var item in requiredDateList) {
+            if (data[requiredDateList[item]] && data[requiredDateList[item]]["delta"]) {
+                graphDated.push(requiredDateList[item])
+                graphConfirmed.push(data[requiredDateList[item]]["delta"].confirmed)
+                graphRecovered.push(data[requiredDateList[item]]["delta"].recovered)
+                graphDeceased.push(data[requiredDateList[item]]["delta"].deceased)
             }
         }
         selected(graphDated, graphConfirmed, graphRecovered, graphDeceased)

@@ -1,65 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Covid-19 Dashboard</title>
 
-	</head>
-	<body>
-		<h2>Covid-19 Dashboard</h2>
-		<canvas id="canvas"> </canvas>
-		<input type="date" />
-		<select name="States" id="states">
-			<option value="States">States</option>
-			<option value="Andhra Pradesh">Andhra Pradesh</option>
-			<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-			<option value="Assam">Assam</option>
-			<option value="Bihar">Bihar</option>
-			<option value="Chhattisgarh">Chhattisgarh</option>
-			<option value="Goa">Goa</option>
-			<option value="Gujarat">Gujarat</option>
-			<option value="Haryana">Haryana</option>
-			<option value="Himachal Pradesh">Himachal Pradesh</option>
-			<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-			<option value="Jharkhand">Jharkhand</option>
-			<option value="Karnataka">Karnataka</option>
-			<option value="Kerala">Kerala</option>
-			<option value="Madhya Pradesh">Madhya Pradesh</option>
-			<option value="Maharashtra">Maharashtra</option>
-			<option value="Manipur">Manipur</option>
-			<option value="Meghalaya">Meghalaya</option>
-			<option value="Mizoram">Mizoram</option>
-			<option value="Nagaland">Nagaland</option>
-			<option value="Odisha">Odisha</option>
-			<option value="Punjab">Punjab</option>
-			<option value="Rajasthan">Rajasthan</option>
-			<option value="Sikkim">Sikkim</option>
-			<option value="Tamil Nadu">Tamil Nadu</option>
-			<option value="Telangana">Telangana</option>
-			<option value="Tripura">Tripura</option>
-			<option value="Uttar Pradesh">Uttar Pradesh</option>
-			<option value="Uttarakhand">Uttarakhand</option>
-			<option value="West Bengal">West Bengal</option>
-			<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-			<option value="Chandigarh">Chandigarh</option>
-			<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-			<option value="Daman and Diu">Daman and Diu</option>
-			<option value="Lakshadweep">Lakshadweep</option>
-			<option value="Delhi">Delhi</option>
-			<option value="Puducherry">Puducherry</option>
-		</select>
-		<table id="covid_details">
-			<thead>
-				<th>New Confirmed</th>
-				<th>New Recovered</th>
-				<th>New Tested</th>
-				<th>confirmed</th>
-				<th>Deceased</th>
-				<th>Recovered</th>
-				<th>Tested</th>
-			</thead>
-		</table>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Covid-19 Dashboard</title>
+
+	<link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+	<div class="container-vertical">
+		<div class="containter-vertical-item">
+			<h2>Covid-19 Dashboard</h2>
+		</div>
+
+		<div class="containter-vertical-item">
+			<div class="container">
+				<div class="container-item">
+
+					<div class="containter-vertical">
+
+						<div class="container-vertical-item">
+							<input type="date">
+						</div>
+
+						<div class="container-vertical-item">
+							<select name="States" id="states">
+								<option value="States">States</option>
+								<option value="Andhra Pradesh">Andhra Pradesh</option>
+								<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+								<option value="Assam">Assam</option>
+								<option value="Bihar">Bihar</option>
+								<option value="Chhattisgarh">Chhattisgarh</option>
+								<option value="Goa">Goa</option>
+								<option value="Gujarat">Gujarat</option>
+								<option value="Haryana">Haryana</option>
+								<option value="Himachal Pradesh">Himachal Pradesh</option>
+								<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+								<option value="Jharkhand">Jharkhand</option>
+								<option value="Karnataka">Karnataka</option>
+								<option value="Kerala">Kerala</option>
+								<option value="Madhya Pradesh">Madhya Pradesh</option>
+								<option value="Maharashtra">Maharashtra</option>
+								<option value="Manipur">Manipur</option>
+								<option value="Meghalaya">Meghalaya</option>
+								<option value="Mizoram">Mizoram</option>
+								<option value="Nagaland">Nagaland</option>
+								<option value="Odisha">Odisha</option>
+								<option value="Punjab">Punjab</option>
+								<option value="Rajasthan">Rajasthan</option>
+								<option value="Sikkim">Sikkim</option>
+								<option value="Tamil Nadu">Tamil Nadu</option>
+								<option value="Telangana">Telangana</option>
+								<option value="Tripura">Tripura</option>
+								<option value="Uttar Pradesh">Uttar Pradesh</option>
+								<option value="Uttarakhand">Uttarakhand</option>
+								<option value="West Bengal">West Bengal</option>
+								<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+								<option value="Chandigarh">Chandigarh</option>
+								<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+								<option value="Daman and Diu">Daman and Diu</option>
+								<option value="Lakshadweep">Lakshadweep</option>
+								<option value="Delhi">Delhi</option>
+								<option value="Puducherry">Puducherry</option>
+							</select>
+						</div>
+
+						<div class="container-vertical-item">
+							<button id="find">find</button>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="container-item">
+					<canvas id="canvas"> </canvas>
+				</div>
+
+				<div class="container-item">
+					<table id="covid_details">
+						<thead>
+							<th>New Confirmed</th>
+							<th>New Recovered</th>
+							<th>New Tested</th>
+							<th>confirmed</th>
+							<th>Deceased</th>
+							<th>Recovered</th>
+							<th>Tested</th>
+						</thead>
+		
+						<tr id="tableData"></tr>
+		
+					</table>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+</body>
+
 </html>

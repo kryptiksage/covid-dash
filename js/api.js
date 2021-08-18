@@ -46,8 +46,5 @@ const Api = async (state, date) => {
 
 const FetchData = async (state, date) => {
 	const data = await Api(state, date);
-	const newData = data[date]["delta"];
-	const totalData = data[date]["total"];
-	return { newData, totalData };
+	return data;
 };
-// module.exports = { Api };

@@ -1,4 +1,4 @@
-export function displayGraph(
+function displayGraph(
 	confirmed,
 	nconfirmed,
 	recovered,

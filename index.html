@@ -4,10 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="./js/index.js"></script>
+		<script src="./js/index.js" type="module"></script>
 		<script src="./js/api.js"></script>
+		<script src="./js/table.js" type="module"></script>
 		<title>Covid-19 Dashboard</title>
-
 	</head>
 	<body>
 		<h2>Covid-19 Dashboard</h2>
@@ -44,9 +44,13 @@
 			<option value="Uttar Pradesh">Uttar Pradesh</option>
 			<option value="Uttarakhand">Uttarakhand</option>
 			<option value="West Bengal">West Bengal</option>
-			<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+			<option value="Andaman and Nicobar Islands">
+				Andaman and Nicobar Islands
+			</option>
 			<option value="Chandigarh">Chandigarh</option>
-			<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+			<option value="Dadra and Nagar Haveli">
+				Dadra and Nagar Haveli
+			</option>
 			<option value="Daman and Diu">Daman and Diu</option>
 			<option value="Lakshadweep">Lakshadweep</option>
 			<option value="Delhi">Delhi</option>
@@ -63,6 +67,7 @@
 				<th>Recovered</th>
 				<th>Tested</th>
 			</thead>
+			<tbody id="tableData"></tbody>
 		</table>
 	</body>
 </html>

@@ -1,34 +1,40 @@
 let state, date;
 
 window.onload = () => {
-    document.getElementById("filter").onclick = async (event) => {
-        state = document.getElementById("state").value;
-        date = document.getElementById("date").value;
-        if (state == "States" || date == "") {
-            window.alert("Select state and date");
+	document.getElementById("filter").onclick = async (event) => {
+		state = document.getElementById("state").value;
+		date = document.getElementById("date").value;
+		if (state == "States" || date == "") {
+			window.alert("Select state and date");
+			return;
+		}
+
+		// Table
+		const data = await Api(state, date);
+
+        if(data[date] == undefined){
+            alert("Data not available for the requested date");
             return;
         }
 
-        // Table
-        const data = await FetchData(state, date);
-        const newData = data[date]["delta"];
-        const totalData = data[date]["total"];
-        const {
-            confirmed: nconfirmed,
-            recovered: nrecovered,
-            tested: ntested,
-        } = newData;
-        const { confirmed, recovered, tested, deceased } = totalData;
-        // Table : html
-        displayGraph(
-            confirmed,
-            nconfirmed,
-            recovered,
-            nrecovered,
-            tested,
-            ntested,
-            deceased
-        );
+		const newData = data[date]["delta"];
+		const totalData = data[date]["total"];
+		const {
+			confirmed: nconfirmed,
+			recovered: nrecovered,
+			tested: ntested,
+		} = newData;
+		const { confirmed, recovered, tested, deceased } = totalData;
+		// Table : html
+		displayGraph(
+			confirmed,
+			nconfirmed,
+			recovered,
+			nrecovered,
+			tested,
+			ntested,
+			deceased
+		);
 
 
         //Graph

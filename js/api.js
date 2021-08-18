@@ -43,8 +43,3 @@ const Api = async (state, date) => {
 	const stateCode = stateCodeJSON[state];
 	return data[stateCode]["dates"];
 };
-
-const FetchData = async (state, date) => {
-	const data = await Api(state, date);
-	return data;
-};

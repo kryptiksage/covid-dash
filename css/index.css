@@ -1,19 +1,19 @@
 /* vertical container */
 
-.container-vertical {
+.ccontainer-vertical {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	height: 100%;
 }
 
-.container-vertical-item {
+.ccontainer-vertical-item {
 	margin: 8px;
 }
 
 /* horizontal container */
 
-.container {
+.ccontainer {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -23,7 +23,7 @@
 	justify-content: space-around;
 }
 
-.container-item {
+.ccontainer-item {
 	border: 2px solid green;
 	border-radius: 5px;
 	padding: 8px;

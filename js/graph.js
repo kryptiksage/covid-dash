@@ -1,6 +1,8 @@
 function selected(dated, confirmed, recovered, deceased) {
+	document.querySelector("#graphContainer").innerHTML = '<canvas id="spreadChart"></canvas>';
+
 	var spreadCanvas = document.getElementById("spreadChart");
-	var lineChart = new Chart(spreadCanvas, {
+	new Chart(spreadCanvas, {
 		type: "line",
 		data: {
 			labels: dated,

@@ -1,142 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<script src="./js/index.js"></script>
-		<script src="./js/api.js"></script>
-		<script src="./js/table.js"></script>
-		<script src="./js/graph.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Bootstrap css -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<script src="./js/index.js"></script>
+	<script src="./js/api.js"></script>
+	<script src="./js/table.js"></script>
+	<script src="./js/graph.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
 
-		<link rel="stylesheet" href="./css/index.css">
+	<!-- Bootstrap css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-		<title>Covid-19 Dashboard</title>
-	</head>
-	<body>
-		<div class="ccontainer-vertical">
-			<div class="ccontainter-vertical-item">
-				<h2>Covid-19 Dashboard</h2>
-			</div>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/data.css">
 
-			<div class="ccontainter-vertical-item">
-				<div class="ccontainer">
-					<div class="ccontainer-item">
-						<div class="ccontainter-vertical">
-							<div class="ccontainer-vertical-item">
-								<input type="date" id="date" />
-							</div>
+	<title>Covid-19 Dashboard</title>
+</head>
 
-							<div class="ccontainer-vertical-item">
-								<select class="form-select" name="States" id="state">
-									<option value="States">States</option>
-									<option value="Andhra Pradesh">
-										Andhra Pradesh
-									</option>
-									<option value="Arunachal Pradesh">
-										Arunachal Pradesh
-									</option>
-									<option value="Assam">Assam</option>
-									<option value="Bihar">Bihar</option>
-									<option value="Chhattisgarh">
-										Chhattisgarh
-									</option>
-									<option value="Goa">Goa</option>
-									<option value="Gujarat">Gujarat</option>
-									<option value="Haryana">Haryana</option>
-									<option value="Himachal Pradesh">
-										Himachal Pradesh
-									</option>
-									<option value="Jammu and Kashmir">
-										Jammu and Kashmir
-									</option>
-									<option value="Jharkhand">Jharkhand</option>
-									<option value="Karnataka">Karnataka</option>
-									<option value="Kerala">Kerala</option>
-									<option value="Madhya Pradesh">
-										Madhya Pradesh
-									</option>
-									<option value="Maharashtra">
-										Maharashtra
-									</option>
-									<option value="Manipur">Manipur</option>
-									<option value="Meghalaya">Meghalaya</option>
-									<option value="Mizoram">Mizoram</option>
-									<option value="Nagaland">Nagaland</option>
-									<option value="Odisha">Odisha</option>
-									<option value="Punjab">Punjab</option>
-									<option value="Rajasthan">Rajasthan</option>
-									<option value="Sikkim">Sikkim</option>
-									<option value="Tamil Nadu">
-										Tamil Nadu
-									</option>
-									<option value="Telangana">Telangana</option>
-									<option value="Tripura">Tripura</option>
-									<option value="Uttar Pradesh">
-										Uttar Pradesh
-									</option>
-									<option value="Uttarakhand">
-										Uttarakhand
-									</option>
-									<option value="West Bengal">
-										West Bengal
-									</option>
-									<option value="Andaman and Nicobar Islands">
-										Andaman and Nicobar Islands
-									</option>
-									<option value="Chandigarh">
-										Chandigarh
-									</option>
-									<option value="Dadra and Nagar Haveli">
-										Dadra and Nagar Haveli
-									</option>
-									<option value="Daman and Diu">
-										Daman and Diu
-									</option>
-									<option value="Lakshadweep">
-										Lakshadweep
-									</option>
-									<option value="Delhi">Delhi</option>
-									<option value="Puducherry">
-										Puducherry
-									</option>
-								</select>
-							</div>
+<body>
 
-							<div class="ccontainer-vertical-item">
-								<button class="btn btn-primary" id="filter">filter</button>
-							</div>
+	<div class="ccontainer-vertical">
+		<!-- header start -->
+		<div class="ccontainer-vertical-item header">
+			<img class="header-item" src="images/img3.jpg"  style="float: left;" alt="logo" />
+			<h2 class="header-item">Covid-19 Dashboard</h2>
+			<img class="header-item" src="images/img2.png" style="float: right;" alt="logo" />
+		</div>
+		<!-- header end -->
+
+		<!-- data start -->
+		<div class="ccontainer-vertical-item">
+			<div class="ccontainer">
+
+				<!-- inputs start -->
+				<div id="inputControls" class="ccontainer-item">
+					<div class="ccontainer-vertical">
+						<div class="ccontainer-vertical-item">
+							<label for="date" class="form-label">Select Date</label>
+							<input class="form-control" type="date" id="date" />
+						</div>
+
+						<div class="ccontainer-vertical-item">
+							<label for="state" class="form-label">State</label>
+							<select class="form-select" name="States" id="state">
+								<option value="States">States</option>
+								<option value="Andhra Pradesh">
+									Andhra Pradesh
+								</option>
+								<option value="Arunachal Pradesh">
+									Arunachal Pradesh
+								</option>
+								<option value="Assam">Assam</option>
+								<option value="Bihar">Bihar</option>
+								<option value="Chhattisgarh">
+									Chhattisgarh
+								</option>
+								<option value="Goa">Goa</option>
+								<option value="Gujarat">Gujarat</option>
+								<option value="Haryana">Haryana</option>
+								<option value="Himachal Pradesh">
+									Himachal Pradesh
+								</option>
+								<option value="Jammu and Kashmir">
+									Jammu and Kashmir
+								</option>
+								<option value="Jharkhand">Jharkhand</option>
+								<option value="Karnataka">Karnataka</option>
+								<option value="Kerala">Kerala</option>
+								<option value="Madhya Pradesh">
+									Madhya Pradesh
+								</option>
+								<option value="Maharashtra">
+									Maharashtra
+								</option>
+								<option value="Manipur">Manipur</option>
+								<option value="Meghalaya">Meghalaya</option>
+								<option value="Mizoram">Mizoram</option>
+								<option value="Nagaland">Nagaland</option>
+								<option value="Odisha">Odisha</option>
+								<option value="Punjab">Punjab</option>
+								<option value="Rajasthan">Rajasthan</option>
+								<option value="Sikkim">Sikkim</option>
+								<option value="Tamil Nadu">
+									Tamil Nadu
+								</option>
+								<option value="Telangana">Telangana</option>
+								<option value="Tripura">Tripura</option>
+								<option value="Uttar Pradesh">
+									Uttar Pradesh
+								</option>
+								<option value="Uttarakhand">
+									Uttarakhand
+								</option>
+								<option value="West Bengal">
+									West Bengal
+								</option>
+								<option value="Andaman and Nicobar Islands">
+									Andaman and Nicobar Islands
+								</option>
+								<option value="Chandigarh">
+									Chandigarh
+								</option>
+								<option value="Dadra and Nagar Haveli">
+									Dadra and Nagar Haveli
+								</option>
+								<option value="Daman and Diu">
+									Daman and Diu
+								</option>
+								<option value="Lakshadweep">
+									Lakshadweep
+								</option>
+								<option value="Delhi">Delhi</option>
+								<option value="Puducherry">
+									Puducherry
+								</option>
+							</select>
+						</div>
+
+						<div class="ccontainer-vertical-item">
+							<button class="btn btn-primary" id="filter">Filter</button>
 						</div>
 					</div>
-
-					<div id="graphContainer" class="ccontainer-item">
-						<canvas id="spreadChart"> </canvas>
-					</div>
-
-					<div class="ccontainer-item">
-						<table id="covid_details" class="table table-bordered table-hover">
-							<thead>
-								<th>New Confirmed</th>
-								<th>New Recovered</th>
-								<th>New Tested</th>
-								<th>confirmed</th>
-								<th>Deceased</th>
-								<th>Recovered</th>
-								<th>Tested</th>
-							</thead>
-							<tbody id="tableData"></tbody>
-						</table>
-					</div>
 				</div>
+				<!-- inputs end -->
+
+				<!-- graph start -->
+				<div id="graphContainer" class="ccontainer-item">
+					<canvas id="spreadChart"> </canvas>
+				</div>
+				<!-- graph end -->
+
+				<!-- table start -->
+				<div id="tableOutput" class="ccontainer-item table-responsive">
+					<table id="covid_details" class="table table-bordered table-hover">
+						<thead>
+							<th>New Confirmed</th>
+							<th>New Recovered</th>
+							<th>New Tested</th>
+							<th>Confirmed</th>
+							<th>Deceased</th>
+							<th>Recovered</th>
+							<th>Tested</th>
+						</thead>
+						<tbody id="tableData"></tbody>
+					</table>
+				</div>
+				<!-- table end -->
+
 			</div>
 		</div>
+		<!-- data end -->
 
-		<!-- Bootstrap js -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-	</body>
+	</div>
+
+	<!-- Bootstrap js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
+</body>
+
 </html>

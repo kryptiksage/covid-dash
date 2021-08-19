@@ -30,3 +30,27 @@
 	margin: 8px;
 	width: 40%;
 }
+
+
+
+
+.header-item{
+	height:120px;
+	display: inline-block;
+	margin: 2%;
+	
+}
+.header h2{
+	font-size: 60px;
+	width: 37%;
+	text-align: center;
+	
+	
+}
+.header
+{
+	width: 100%;
+}
+.header img{
+	width: 24%;
+}

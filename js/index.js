@@ -1,9 +1,31 @@
 let state, date;
 
+const getYesterdayDate = () => {
+	let date = new Date(Date.now() - 86400000);
+
+	let day = date.getDate();
+	let month = date.getMonth();
+	let year = date.getFullYear();
+
+	if(day < 10) {
+		day = "0" + day;
+	}
+
+	if(month < 10) {
+		month = "0" + month;
+	}
+
+	return year + "-" + month + "-" + day;
+};
+
 window.onload = () => {
+	document.getElementById("state").value = "Kerala";
+	document.getElementById("date").value = getYesterdayDate();
+
 	document.getElementById("filter").onclick = async (event) => {
 		state = document.getElementById("state").value;
 		date = document.getElementById("date").value;
+		
 		if (state == "States" || date == "") {
 			window.alert("Select state and date");
 			return;
@@ -56,4 +78,6 @@ window.onload = () => {
         }
         selected(graphDated, graphConfirmed, graphRecovered, graphDeceased)
     };
+
+	document.getElementById("filter").click();
 };

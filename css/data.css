@@ -1,0 +1,18 @@
+#filter {
+    float: right;
+}
+
+#inputControls {
+    width: 22%;
+}
+
+#graphContainer {
+    width: 48%;
+
+}
+
+#tableOutput {
+    width: 90%;
+    align-self: center;
+    text-align: center;
+}

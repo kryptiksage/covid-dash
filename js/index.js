@@ -4,7 +4,7 @@ const getYesterdayDate = () => {
 	let date = new Date(Date.now() - 86400000);
 
 	let day = date.getDate();
-	let month = date.getMonth();
+	let month = date.getMonth() + 1; // getMonth represents jan as 0
 	let year = date.getFullYear();
 
 	if(day < 10) {

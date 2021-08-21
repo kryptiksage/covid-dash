@@ -1,4 +1,22 @@
+const toggleButtonState = () => {
+	let filterBtn = document.getElementById("filter");
+
+	if(filterBtn.disabled) {
+		setTimeout(() => {
+			filterBtn.innerHTML = "Filter";
+			filterBtn.disabled = false;
+		}, 300);
+
+		return;
+	}
+
+	filterBtn.disabled = true;
+	filterBtn.innerHTML = "<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>";
+};
+
 const Api = async (state, date) => {
+	toggleButtonState(); // loading spinner
+
 	const stateCodeJSON = {
 		"Andaman and Nicobar Islands": "AN",
 		"Andhra Pradesh": "AP",
@@ -41,5 +59,8 @@ const Api = async (state, date) => {
 	const res = await fetch("https://data.covid19india.org/v4/timeseries.json");
 	const data = await res.json();
 	const stateCode = stateCodeJSON[state];
+
+	toggleButtonState(); // loading spinner
+
 	return data[stateCode]["dates"];
 };

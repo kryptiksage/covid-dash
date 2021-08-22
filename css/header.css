@@ -1,19 +1,19 @@
 .header-item {
-	height:100px;
+	height: 90px;
 	display: inline-block;
-	margin: 2%;
+	margin: 1.5%;
 }
 
 .header h2 {
-	font-size: 60px;
-	width: 37%;
+	font-size: 65px;
+	width: 50%;
 	text-align: center;
+	font-family: 'Suez One', serif;
 }
-
-.header {
+	.header {
 	width: 100%;
 }
 
 .header img {
-	width: 24%;
+	width: 20%;
 }

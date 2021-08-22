@@ -1,0 +1,29 @@
+/* vertical container */
+
+.ccontainer-vertical {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 100%;
+}
+
+.ccontainer-vertical-item {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+/* horizontal container */
+
+.ccontainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.ccontainer-item {
+	padding: 8px;
+	margin: 8px;
+	width: 38%;
+}
